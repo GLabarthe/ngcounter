@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { CounterwallComponent } from './counterwall/counterwall.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CounterwallComponent
   ],
   imports: [
     BrowserModule,

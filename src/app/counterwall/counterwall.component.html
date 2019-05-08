@@ -1,0 +1,17 @@
+<div>
+  <div>
+  <h4>Counter Wall</h4>
+  <h6>{{numCounter}}</h6>
+  <button (click) = "createCounter()">Create Counter</button>
+</div>
+  
+<div *ngFor = "let val of counterArray; index as i">
+    
+  <h3>Counter {{i}}</h3>
+  <h5>{{count}}</h5>
+  <div>
+    <div><button (click) = "countIncrease(i)" >+</button></div>
+    <div><button (click) = "countDecrease(i)" >-</button></div>
+  </div>
+</div>  
+</div>
