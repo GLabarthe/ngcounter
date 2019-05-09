@@ -1,5 +1,4 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
 import { Counter } from '../counter';
 
 @Component({
@@ -9,25 +8,14 @@ import { Counter } from '../counter';
 })
 
 export class CounterwallComponent implements OnInit {
-  // counterObj: 
-  //   {
-  //     countNum: number;
-  //     count: number;
-  //   };
-
+  
   counterArray: Counter [];
   counter: Counter ;
   count: number = 0;
   numCounter: number = 0;
   maxCount: number = 6;
 
-  
-
-  constructor() { 
-    // this.counterObj = {
-    //   countNum: 0,
-    //   count: 0,
-    // };
+  constructor() {    
     this.counterArray = new Array;
   }
 
@@ -36,12 +24,12 @@ export class CounterwallComponent implements OnInit {
 
   countIncrease(index) {
     this.counterArray[index].counterValue++;
-    //counter.value ++
-    //  this.count ++;
   }
 
-  countDecrease(index) {    
-   this.counterArray[index].counterValue --;
+  countDecrease(index) {
+    if (this.counterArray[index].counterValue > 0){
+         this.counterArray[index].counterValue --;
+    }
   }
 
   createCounter() {
@@ -59,13 +47,5 @@ export class CounterwallComponent implements OnInit {
       this.counterArray.push(this.counter);
     }    
     console.log(this.counterArray);
-
-    // for (let i=0; i<this.numCounter; i++) {
-    //   this.counterArray.push(
-    //     {counterObj.countNum = i}
-    //   )
-
-    //}
   }
-
 }
